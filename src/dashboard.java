@@ -5,6 +5,8 @@
  */
 
 import java.awt.Color;
+import internalPages.*;
+
 
 /**
  *
@@ -37,8 +39,12 @@ public class dashboard extends javax.swing.JFrame {
         navbar = new javax.swing.JPanel();
         dashpane = new javax.swing.JPanel();
         jlabel1 = new javax.swing.JLabel();
+        userpane = new javax.swing.JPanel();
+        jlabel2 = new javax.swing.JLabel();
+        reportpane = new javax.swing.JPanel();
+        jlabel3 = new javax.swing.JLabel();
         header = new javax.swing.JPanel();
-        jDesktopPane1 = new javax.swing.JDesktopPane();
+        maindesktop = new javax.swing.JDesktopPane();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -67,7 +73,9 @@ public class dashboard extends javax.swing.JFrame {
         dashpane.setLayout(dashpaneLayout);
         dashpaneLayout.setHorizontalGroup(
             dashpaneLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jlabel1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 170, Short.MAX_VALUE)
+            .addGroup(dashpaneLayout.createSequentialGroup()
+                .addComponent(jlabel1, javax.swing.GroupLayout.DEFAULT_SIZE, 110, Short.MAX_VALUE)
+                .addContainerGap())
         );
         dashpaneLayout.setVerticalGroup(
             dashpaneLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -77,7 +85,72 @@ public class dashboard extends javax.swing.JFrame {
                 .addContainerGap())
         );
 
-        navbar.add(dashpane, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 160, 170, 40));
+        navbar.add(dashpane, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 150, 120, 40));
+
+        userpane.setBackground(new java.awt.Color(102, 102, 255));
+        userpane.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                userpaneMouseClicked(evt);
+            }
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                userpaneMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                userpaneMouseExited(evt);
+            }
+        });
+
+        jlabel2.setBackground(new java.awt.Color(102, 102, 255));
+        jlabel2.setFont(new java.awt.Font("Century Gothic", 1, 14)); // NOI18N
+        jlabel2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jlabel2.setText("USER PAGE");
+
+        javax.swing.GroupLayout userpaneLayout = new javax.swing.GroupLayout(userpane);
+        userpane.setLayout(userpaneLayout);
+        userpaneLayout.setHorizontalGroup(
+            userpaneLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jlabel2, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 110, Short.MAX_VALUE)
+        );
+        userpaneLayout.setVerticalGroup(
+            userpaneLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, userpaneLayout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jlabel2)
+                .addContainerGap())
+        );
+
+        navbar.add(userpane, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 190, 110, 40));
+
+        reportpane.setBackground(new java.awt.Color(102, 102, 255));
+        reportpane.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                reportpaneMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                reportpaneMouseExited(evt);
+            }
+        });
+
+        jlabel3.setBackground(new java.awt.Color(102, 102, 255));
+        jlabel3.setFont(new java.awt.Font("Century Gothic", 1, 14)); // NOI18N
+        jlabel3.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jlabel3.setText("REPORT LIST");
+
+        javax.swing.GroupLayout reportpaneLayout = new javax.swing.GroupLayout(reportpane);
+        reportpane.setLayout(reportpaneLayout);
+        reportpaneLayout.setHorizontalGroup(
+            reportpaneLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jlabel3, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 110, Short.MAX_VALUE)
+        );
+        reportpaneLayout.setVerticalGroup(
+            reportpaneLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, reportpaneLayout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jlabel3)
+                .addContainerGap())
+        );
+
+        navbar.add(reportpane, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 230, 110, 40));
 
         jPanel2.add(navbar);
         navbar.setBounds(0, 0, 170, 450);
@@ -98,22 +171,22 @@ public class dashboard extends javax.swing.JFrame {
         jPanel2.add(header);
         header.setBounds(170, 0, 690, 60);
 
-        jDesktopPane1.setBackground(new java.awt.Color(0, 204, 204));
-        jDesktopPane1.setPreferredSize(new java.awt.Dimension(760, 420));
+        maindesktop.setBackground(new java.awt.Color(0, 204, 204));
+        maindesktop.setPreferredSize(new java.awt.Dimension(760, 420));
 
-        javax.swing.GroupLayout jDesktopPane1Layout = new javax.swing.GroupLayout(jDesktopPane1);
-        jDesktopPane1.setLayout(jDesktopPane1Layout);
-        jDesktopPane1Layout.setHorizontalGroup(
-            jDesktopPane1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+        javax.swing.GroupLayout maindesktopLayout = new javax.swing.GroupLayout(maindesktop);
+        maindesktop.setLayout(maindesktopLayout);
+        maindesktopLayout.setHorizontalGroup(
+            maindesktopLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGap(0, 690, Short.MAX_VALUE)
         );
-        jDesktopPane1Layout.setVerticalGroup(
-            jDesktopPane1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+        maindesktopLayout.setVerticalGroup(
+            maindesktopLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGap(0, 390, Short.MAX_VALUE)
         );
 
-        jPanel2.add(jDesktopPane1);
-        jDesktopPane1.setBounds(170, 60, 690, 390);
+        jPanel2.add(maindesktop);
+        maindesktop.setBounds(170, 60, 690, 390);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -137,6 +210,27 @@ public class dashboard extends javax.swing.JFrame {
     private void dashpaneMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_dashpaneMouseExited
      dashpane.setBackground(navcolor);  
     }//GEN-LAST:event_dashpaneMouseExited
+
+    private void userpaneMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_userpaneMouseEntered
+     userpane.setBackground(bodycolor);   
+    }//GEN-LAST:event_userpaneMouseEntered
+
+    private void userpaneMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_userpaneMouseExited
+     userpane.setBackground(navcolor);   
+    }//GEN-LAST:event_userpaneMouseExited
+
+    private void reportpaneMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_reportpaneMouseEntered
+     reportpane.setBackground(bodycolor);
+    }//GEN-LAST:event_reportpaneMouseEntered
+
+    private void reportpaneMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_reportpaneMouseExited
+     reportpane.setBackground(navcolor);
+    }//GEN-LAST:event_reportpaneMouseExited
+
+    private void userpaneMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_userpaneMouseClicked
+     userPage up = new userPage();
+     maindesktop.add(up).setVisible(true);
+    }//GEN-LAST:event_userpaneMouseClicked
 
     /**
      * @param args the command line arguments
@@ -176,9 +270,13 @@ public class dashboard extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JPanel dashpane;
     private javax.swing.JPanel header;
-    private javax.swing.JDesktopPane jDesktopPane1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JLabel jlabel1;
+    private javax.swing.JLabel jlabel2;
+    private javax.swing.JLabel jlabel3;
+    private javax.swing.JDesktopPane maindesktop;
     private javax.swing.JPanel navbar;
+    private javax.swing.JPanel reportpane;
+    private javax.swing.JPanel userpane;
     // End of variables declaration//GEN-END:variables
 }
